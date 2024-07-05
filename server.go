@@ -12,6 +12,7 @@ import (
 type params struct {
 	User            string    `env:"PROXY_USER" envDefault:""`
 	Password        string    `env:"PROXY_PASSWORD" envDefault:""`
+	Ip              string    `env:"PROXY_IP" envDefault:"0.0.0.0"`
 	Port            string    `env:"PROXY_PORT" envDefault:"1080"`
 	AllowedDestFqdn string    `env:"ALLOWED_DEST_FQDN" envDefault:""`
 	AllowedIPs      []string  `env:"ALLOWED_IPS" envSeparator:"," envDefault:""`
@@ -57,7 +58,7 @@ func main() {
 	}
 
 	log.Printf("Start listening proxy service on port %s\n", cfg.Port)
-	if err := server.ListenAndServe("tcp", ":"+cfg.Port); err != nil {
+	if err := server.ListenAndServe("tcp", cfg.Ip":"+cfg.Port); err != nil {
 		log.Fatal(err)
 	}
 }
