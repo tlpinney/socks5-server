@@ -23,6 +23,7 @@ Simple socks5 server using go-socks5 with authentication, allowed ips list and d
 |------------|----|-------|-----------|
 |PROXY_USER|String|EMPTY|Set proxy user (also required existed PROXY_PASS)|
 |PROXY_PASSWORD|String|EMPTY|Set proxy password for auth, used with PROXY_USER|
+|PROXY_IP|String|0.0.0.0|Set ip for application inside docker container|
 |PROXY_PORT|String|1080|Set listen port for application inside docker container|
 |ALLOWED_DEST_FQDN|String|EMPTY|Allowed destination address regular expression pattern. Default allows all.|
 |ALLOWED_IPS|String|Empty|Set allowed IP's that can connect to proxy, separator `,`|
