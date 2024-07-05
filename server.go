@@ -58,7 +58,7 @@ func main() {
 	}
 
 	log.Printf("Start listening proxy service on port %s\n", cfg.Port)
-	if err := server.ListenAndServe("tcp", cfg.Ip":"+cfg.Port); err != nil {
+	if err := server.ListenAndServe("tcp", cfg.Ip+":"+cfg.Port); err != nil {
 		log.Fatal(err)
 	}
 }
